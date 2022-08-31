@@ -11,13 +11,9 @@ const props = defineProps({
 </script>
 <template>
   <div class="bg:gray-22.active active p:8|20_li p:10|0 r:10 w:full">
-    <TransitionGroup
-      name="list"
-      tag="ul"
-      class="@shake|1s|infinite>li:first list-style:none mt:10 pl:15"
-    >
+    <ul class="@shake|1s|infinite>li:first list-style:none">
       <li
-        class="bg:gray-28:hover bg:gray-32:active flex gap:12 cursor:pointer"
+        class="bg:gray-28:hover bg:gray-32:active flex gap:12 cursor:pointer outline:gray-28:hover"
         v-for="item in props.data"
         :key="item.email"
       >
@@ -29,6 +25,9 @@ const props = defineProps({
             class="round object:cover"
             alt="avatar"
           />
+          <svg
+            class="abs right:0 bottom:3 bg:green-70 outline:2|solid|gray-28 round w:7 h:7"
+          />
         </div>
         <div>
           <div class="flex align-items:center">
@@ -39,17 +38,7 @@ const props = defineProps({
           <p class="text:12 m:0 font:gray-66">{{ item.email || "" }}</p>
         </div>
       </li>
-    </TransitionGroup>
+    </ul>
   </div>
 </template>
-<style scoped>
-.list-enter-active,
-.list-leave-active {
-  transition: all 0.5s ease;
-}
-.list-enter-from,
-.list-leave-to {
-  opacity: 0;
-  transform: translateX(30px);
-}
-</style>
+<style scoped></style>

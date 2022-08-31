@@ -37,8 +37,10 @@ onMounted(() => {
     <button
       v-for="(orderTerm, index) in orderTermList"
       :key="index"
-      class="font:14 text:center height:40 height:56@md bg:gray-44 color:white border:none font-weight:bolder p:10 cursor:pointer mb:20 text-transform:capitalize"
-      :class="{ 'bg:gray-22.active active': orderTerm === order }"
+      class="font:14 text:center height:40 height:56@md bg:gray-44 color:white border:none p:15 cursor:pointer mb:20 text-transform:capitalize"
+      :class="{
+        'bg:gray-22.active active font-weight:bolder ': orderTerm === order,
+      }"
       @click="getOrderHandeler(orderTerm)"
     >
       Order By {{ orderTerm }}
@@ -49,7 +51,7 @@ onMounted(() => {
       <UserList :data="filteredUserData"></UserList>
     </template>
     <template v-else>
-      <h1 class="font:40 font:heavy italic m:50 text:center color:white">
+      <h1 class="font:25 font:heavy italic m:50 text:center color:white">
         Loading...
       </h1>
     </template>
