@@ -13,7 +13,7 @@ const props = defineProps({
   <div class="bg:gray-22.active active p:8|20_li p:10|0 r:10 w:full">
     <ul class="@shake|1s|infinite>li:first list-style:none">
       <li
-        class="bg:gray-28:hover bg:gray-32:active flex gap:12 cursor:pointer outline:gray-28:hover"
+        class="bg:gray-28:hover bg:gray-32:active flex gap:12 cursor:pointer outline:2|solid|gray-28:hover_svg"
         v-for="item in props.data"
         :key="item.email"
       >
@@ -26,7 +26,7 @@ const props = defineProps({
             alt="avatar"
           />
           <svg
-            class="abs right:0 bottom:3 bg:green-70 outline:2|solid|gray-28 round w:7 h:7"
+            class="abs right:0 bottom:3 bg:green-70 outline:2|solid|gray-22 round w:7 h:7"
           />
         </div>
         <div>
